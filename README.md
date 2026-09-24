@@ -92,9 +92,9 @@ The bootloader entry sequence is timing-sensitive on this particular device.
 
 The working sequence used by this project is:
 
-1. Assert reset.
-2. Release reset.
-3. Repeatedly send:
+1. Assert reset (RST pin low)
+2. Release reset (RST pin high)
+3. Send:
 
        UXTDWU
 
