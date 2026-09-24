@@ -22,6 +22,16 @@ device.
 > Keep the original dump as a separate, read-only backup.
 
 ---
+## Key files 
+
+- dump.py - dump entire 512kb memory into a file. Note, this is painfully slow process
+- erase.py - erases each of the 64 block 64kb at a time
+- test_if_empty.py - reads data from flash to check if empty
+- write.py - flashes selected file 
+- test.py - compares provided number of bytes from selected block with a data from a file
+
+
+---
 
 ## Hardware
 
@@ -49,8 +59,8 @@ The following pins are relevant to the programming/debugging work.
 
 | Pin | Function | Use |
 |-----|----------|-----|
-| 3 | P2 / SWD_IO | SWD |
-| 4 | P3 / SWD_CLK | SWD |
+| 3 | P2 / SWD_IO | SWD (not required for flashing) |
+| 4 | P3 / SWD_CLK | SWD (not required for flashing) |
 | 7 | TM / TEST_MODE | ROM/bootloader entry |
 | 8 | P9 | UART TX |
 | 9 | P10 | UART RX |
