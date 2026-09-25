@@ -15,12 +15,6 @@ The ROM interface is closely related to the PHY6222 family. The commands
 documented here have been experimentally verified on the actual ST17H65
 device.
 
-> **Warning**
->
-> Flash erase and programming are destructive operations.
-> Always make and verify a complete flash dump before experimenting.
-> Keep the original dump as a separate, read-only backup.
-
 ---
 ## Key files 
 
@@ -83,6 +77,7 @@ The ROM bootloader is accessed through the UART.
 | P10 / pin 9 (RX) | GPIO14 / UART TX |
 | GND | GND |
 | RST_N / pin 22 | GPIO25 |
+| TM / pin 22 | GPIO25 |
 
 UART speed used:
 
@@ -93,6 +88,8 @@ The Raspberry Pi GPIO is 3.3 V logic.
 ---
 
 ## Entering the ROM bootloader
+
+See example python files on the ROM bootloader entry.
 
 The bootloader entry sequence is timing-sensitive on this particular device.
 
@@ -622,30 +619,6 @@ Recommended workflow:
 7. Verify every programmed block.
 8. Keep a known-good recovery image.
 
-Never erase the device without first having a verified backup.
-
----
-
-# Project status
-
-Current status:
-
-- [x] Enter ST17H65 ROM bootloader
-- [x] Identify ROM as `6222M005`
-- [x] Read flash through native SPI controller
-- [x] Identify correct 4-byte SPI READ command
-- [x] Read flash status
-- [x] Write Enable
-- [x] 64 KiB sector erase
-- [x] Full 512 KiB erase
-- [x] Bulk 8 KiB programming with `cpbin`
-- [x] Verify programming checksum
-- [ ] Complete optimized 512 KiB read tool
-- [ ] Fully document ROM command protocol
-- [ ] Investigate RAMRUN functionality
-- [ ] Investigate bootloader modification
-- [ ] Develop custom firmware
-
 ---
 
 # Disclaimer
@@ -658,3 +631,5 @@ identical ROM behaviour.
 
 Commands and register values marked as experimentally verified were tested
 on the MiLi MiTag HD-P16 hardware used for this project.
+
+Work is based on https://github.com/pvvx/THB2
