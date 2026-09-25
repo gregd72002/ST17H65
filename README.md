@@ -27,6 +27,13 @@ device.
 
 ---
 
+## Toolchain
+
+```
+https://github.com/pvvx/THB2
+```
+---
+
 ## Standard firmware
 
 Provided in dump.bin. By default, it shows boots sequence on UART. Keeping TX disconnected allow it to boot fully. Once TX is connected, the stock firmware does not initialise fully.
