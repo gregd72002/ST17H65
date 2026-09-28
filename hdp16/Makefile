@@ -34,6 +34,7 @@ SRC_PRJ += logger.c
 SRC_PRJ += buzzer.c
 SRC_PRJ += nuservice.c
 SRC_PRJ += nus_log.c
+SRC_PRJ += my_uart.c
 
 INCLUDES = -I$(SRC_PATH)
 
@@ -41,8 +42,8 @@ SRCS = $(addprefix $(SRC_PATH)/, $(SRC_PRJ))
 ##############################################################################
 DEFINES += -D__GCC
 DEFINES += $(PROJECT_DEF)
-DEFINES += -DCFG_SLEEP_MODE=PWR_MODE_SLEEP
-#DEFINES += -DCFG_SLEEP_MODE=PWR_MODE_NO_SLEEP
+#DEFINES += -DCFG_SLEEP_MODE=PWR_MODE_SLEEP
+DEFINES += -DCFG_SLEEP_MODE=PWR_MODE_NO_SLEEP
 DEFINES += -DDEBUG_INFO=0
 DEFINES += -DMTU_SIZE=240
 DEFINES += -DMAX_NUM_LL_CONN=1
