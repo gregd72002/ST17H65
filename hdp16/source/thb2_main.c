@@ -115,20 +115,6 @@ uint8_t * str_bin2hex(uint8_t *d, uint8_t *s, int len) {
 	return d;
 }
 
-static void my_uart_send_hex8(uint8_t value)
-{
-    const char hex[] = "0123456789ABCDEF";
-
-    hal_uart_send_byte(UART1, hex[(value >> 4) & 0x0F]);
-    hal_uart_send_byte(UART1, hex[value & 0x0F]);
-}
-
-static void my_uart_send_string(const char *str)
-{
-     while (*str)
-         hal_uart_send_byte(UART1, *str++);
-}
-
 /*
 static void debug_init_keys(void)
 {
