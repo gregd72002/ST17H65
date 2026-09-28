@@ -37,6 +37,9 @@ ST17H65 is highly customisable chip featuring:
 - web - OTA management portal for managing the device after BOOT firmware is flashed
 - hdp16 - source code and SDK
 
+### If you like it
+Buy me a coffee
+
 ### HDP16 software
 
 There are 2 types of software in play:
