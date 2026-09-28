@@ -16,6 +16,7 @@ Button presses are recognised too, so does the buzzer work well.
 
 What also works is OTA (over air updates). So any test, new version, functionality can be flashed onto the chip through a browser. Although it requires initially to be flashed by wire. This is to get the OTA BOOT software in. 
 
+What is not working yet - accelerometer. It should be possible to set the device to sleep and wake it up on movement triggering an event.
 
 HDP16 key features:
 - BLE
