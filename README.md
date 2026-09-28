@@ -48,7 +48,7 @@ There are 2 types of software in play:
 
 The functionality overlaps to a degree but they reside in a different places on the chip.
 
-BOOT can be only programmed using physical wiring (see "flash" folder). It has a limitted functionality firmware that exposes OTA to flash APP.
+BOOT can be only programmed using physical wiring (see "flash" folder). It has a limitted functionality firmware that exposes OTA to flash APP. The device has a watchdog and will reboot itself after 6min in this mode.
 APP is the fully featured firmware that can be easily compiled and flashed over the air into the chip.
 
 HDP16 boots by default into APP.
