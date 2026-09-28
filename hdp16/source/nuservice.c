@@ -16,6 +16,7 @@
  * TX: Notify
  */
 
+
 #include "types.h"
 #include "bcomdef.h"
 #include "OSAL.h"
@@ -25,8 +26,10 @@
 #include "gatt_uuid.h"
 #include "gatt_profile_uuid.h"
 #include "gattservapp.h"
-
+#include "config.h"
 #include "nuservice.h"
+
+#if (DEV_SERVICES & SERVICE_NUS)
 
 
 /*********************************************************************
@@ -482,3 +485,5 @@ void NUS_HandleConnStatusCB(uint16 connHandle, uint8 changeType)
         }
     }
 }
+
+#endif

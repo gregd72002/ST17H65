@@ -3,6 +3,9 @@
 #include "bcomdef.h"
 #include "thb2_main.h"
 #include "nuservice.h"
+#include "config.h"
+
+#if (DEV_SERVICES & SERVICE_NUS)
 
 #define NUS_LOG_BUFFER_SIZE  256
 #define NUS_LOG_QUEUE_SIZE   4
@@ -261,3 +264,5 @@ void nus_log_process(void)
         nus_log_count--;
     }
 }
+
+#endif

@@ -690,8 +690,11 @@ void SimpleBLEPeripheral_Init( uint8_t task_id )
 	GATTServApp_AddService( GATT_ALL_SERVICES );		//	GATT attributes
 	DevInfo_AddService();								//	Device Information Service
 	Batt_AddService();
+#if (DEV_SERVICES & SERVICE_NUS)
 	NUS_AddService();
 	NUS_SendString("Hello\r\n");
+#endif
+
 #if (DEV_SERVICES & SERVICE_THS)
 	TH_AddService();
 #endif
@@ -994,11 +997,13 @@ uint16_t BLEPeripheral_ProcessEvent( uint8_t task_id, uint16_t events )
 		return(events ^ SBP_CMDDATA);
 	}
 
+#if (DEV_SERVICES & SERVICE_NUS)
 	if (events & MY_NUS_LOG_EVT)
 	{
 	    nus_log_process();
 	    return (events ^ MY_NUS_LOG_EVT);
 	}
+#endif
 
 	if (events & DEBUG_EVT)
 	{   

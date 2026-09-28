@@ -3,6 +3,10 @@
 
 #include "bcomdef.h"
 #include "att.h"
+#include "config.h"
+
+#if (DEV_SERVICES & SERVICE_NUS)
+
 
 #define NUS_MAX_DATA_LEN 20
 
@@ -13,5 +17,7 @@ bStatus_t NUS_SendHex(uint8 *data, uint8 len);
 bStatus_t NUS_SendString(const char *str);
 
 void NUS_HandleConnStatusCB(uint16 connHandle, uint8 changeType);
+
+#endif
 
 #endif

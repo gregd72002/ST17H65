@@ -96,6 +96,7 @@
 //#define SERVICE_ZIGBEE		0x01000000	// BZ-version
 //#define SERVICE_PIR			0x02000000	// use PIR sensor
 #define SERVICE_EXTENDED	0x80000000  //
+#define SERVICE_NUS		0x04000000
 
 #define OTA_TYPE_NONE	0	// нет OTA, только переключение из APP на boot прошивку
 #define OTA_TYPE_BOOT	SERVICE_OTA		// вариант для прошивки boot + OTA
@@ -507,6 +508,7 @@
 #else
 #define DEV_SERVICES (OTA_TYPE \
 		| SERVICE_BUTTON \
+		| SERVICE_NUS \
 		| SERVICE_FINDMY \
 		| SERVICE_BINDKEY \
 )
