@@ -4,6 +4,18 @@ This work is based on pvvx THB2 sources, configured for HDP16 device
 https://github.com/pvvx/THB2
 ```
 
+### Where to start
+1. Compile -> go to hdp16 and run make (install toolchains for arm)
+2. Flash -> see flash folder
+
+### What is it
+This is a DIY project exploring different functionality of HDP16 tracker. The tracker features a very capable low power chip.
+
+My initial idea was to repurpose it as UART<->BLE bridge. This is now working well.
+Button presses are recognised too, so does the buzzer work well.
+
+What also works is OTA (over air updates). So any test, new version, functionality can be flashed onto the chip through a browser. Although it requires initially to be flashed by wire. This is to get the OTA BOOT software in. 
+
 
 HDP16 key features:
 - BLE
@@ -11,7 +23,6 @@ HDP16 key features:
 - accelerometer (SC7A20)
 - buzzer
 - UART to BLE bridge (wip)
-- FindMy (to be tested)
 - Nordic UART service (wip)
 - OTA with web management
 
