@@ -6,7 +6,6 @@
 #include "gpio.h"
 #include "log.h"
 
-#if (DEBUG_INFO == 0)
 
 #define LCD_PACKET_LEN 14
 
@@ -15,9 +14,7 @@ typedef struct
     uint8_t data[LCD_PACKET_LEN];
 } lcd_packet_t;
 
-static lcd_packet_t lcd_packet;
-static uint8_t lcd_packet_pos = 0;
-
+#if (DEBUG_INFO == 0)
 
 void uart_send_dec(uint8_t value);
 void debug_print_lcd_packet(const lcd_packet_t *packet);

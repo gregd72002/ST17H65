@@ -2,6 +2,9 @@
 
 #if (DEBUG_INFO == 0)
 
+static lcd_packet_t lcd_packet;
+static uint8_t lcd_packet_pos = 0;
+
 void uart_send_dec(uint8_t value)
 {
     if (value >= 100)
