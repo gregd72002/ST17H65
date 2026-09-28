@@ -1,8 +1,7 @@
 ##############################################################################
 PROJECT_NAME ?= bthome
-#PROJECT_DEF ?= -DDEVICE=DEVICE_THB2
 ##############################################################################
-COM_PORT = COM6
+COM_PORT = /dev/serial0 
 ##############################################################################
 # Source
 SRC_PATH = ./source
@@ -42,8 +41,8 @@ SRCS = $(addprefix $(SRC_PATH)/, $(SRC_PRJ))
 ##############################################################################
 DEFINES += -D__GCC
 DEFINES += $(PROJECT_DEF)
-#DEFINES += -DCFG_SLEEP_MODE=PWR_MODE_SLEEP
-DEFINES += -DCFG_SLEEP_MODE=PWR_MODE_NO_SLEEP
+DEFINES += -DCFG_SLEEP_MODE=PWR_MODE_SLEEP
+#DEFINES += -DCFG_SLEEP_MODE=PWR_MODE_NO_SLEEP
 DEFINES += -DDEBUG_INFO=0
 DEFINES += -DMTU_SIZE=240
 DEFINES += -DMAX_NUM_LL_CONN=1

@@ -30,6 +30,12 @@ ST17H65 is highly customisable chip featuring:
 - SWD: Serial Wire Debug interface
 - RF: Single-pin 2.4 GHz antenna connection
 
+### This repository
+
+- flash - includes scripts to load BOOT firmware as well as helper tools
+- bin - precompiles BOOT and APP firmware
+- web - OTA management portal for managing the device after BOOT firmware is flashed
+- hdp16 - source code and SDK
 
 ### HDP16 software
 
